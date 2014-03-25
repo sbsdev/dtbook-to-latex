@@ -45,7 +45,7 @@
         <p:input port="stylesheet">
             <p:inline>
                 <xsl:stylesheet version="2.0">
-                    <xsl:import href="../xslt/dtbook2latex_sbs.xsl"/>
+                    <xsl:import href="dtbook2latex_sbs.xsl"/>
                     <xsl:template match="/">
                         <xsl:element name="c:data">
                             <xsl:attribute name="content-type" select="'application/x-latex'"/>
