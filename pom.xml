@@ -19,4 +19,24 @@
   
   <name>DAISY Pipeline 2 module :: sbs:dtbook-to-latex</name>
   
+  <build>
+    <plugins>
+      <plugin>
+	<groupId>org.vafer</groupId>
+	<artifactId>jdeb</artifactId>
+	<configuration>
+	  <dataSet>
+	    <data>
+	      <type>file</type>
+	      <src>target/${project.artifactId}-${project.version}.jar</src>
+	      <mapper>
+		<type>perm</type>
+		<prefix>/opt/daisy-pipeline2/modules</prefix>
+	      </mapper>
+	    </data>
+	  </dataSet>
+	</configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>
