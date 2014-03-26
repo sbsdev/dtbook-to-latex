@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<x:description xmlns:x="http://www.jenitennison.com/xslt/xspec"
+	       xmlns:dtb="http://www.daisy.org/z3986/2005/dtbook/"
+	       stylesheet="../../main/resources/xml/dtbook2latex_sbs.xsl">
+
+  <x:scenario label="Plain p">
+    <x:context>
+      <dtb:p>foo</dtb:p>
+    </x:context>
+    <x:expect label="latex">foo
+
+</x:expect>
+  </x:scenario>
+
+  <x:scenario label="Escape special chars">
+    <x:context>
+      <dtb:p>\</dtb:p>
+    </x:context>
+    <x:expect label="latex">\textbackslash 
+
+</x:expect>
+  </x:scenario>
+
+</x:description>
