@@ -54,8 +54,8 @@
     </p:option>
     
     <p:import href="dtbook-to-latex.convert.xpl"/>
-    <p:import href="http://www.daisy.org/pipeline/modules/dtbook-utils/dtbook-load.xpl"/>
-    <p:import href="http://www.daisy.org/pipeline/modules/fileset-utils/xproc/fileset-library.xpl"/>
+    <p:import href="http://www.daisy.org/pipeline/modules/dtbook-utils/library.xpl"/>
+    <p:import href="http://www.daisy.org/pipeline/modules/fileset-utils/library.xpl"/>
     
     <!-- =========== -->
     <!-- LOAD DTBOOK -->
