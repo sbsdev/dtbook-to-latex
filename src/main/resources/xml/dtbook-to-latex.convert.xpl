@@ -13,6 +13,24 @@
     <p:input port="fileset.in"/>
     <p:input port="in-memory.in" sequence="true"/>
     <p:option name="output-dir" required="true"/>
+    <p:option name="fontsize" required="true"/>
+    <p:option name="font" required="true"/>
+    <p:option name="backupFont" required="true"/>
+    <p:option name="backupUnicodeRanges" required="true"/>
+    <p:option name="defaultLanguage" required="true"/>
+    <p:option name="stocksize" required="true"/>
+    <p:option name="alignment" required="true"/>
+    <p:option name="pageStyle" required="true"/>
+    <p:option name="line_spacing" required="true"/>
+    <p:option name="paperwidth" required="true"/>
+    <p:option name="paperheight" required="true"/>
+    <p:option name="left_margin" required="true"/>
+    <p:option name="right_margin" required="true"/>
+    <p:option name="top_margin" required="true"/>
+    <p:option name="bottom_margin" required="true"/>
+    <p:option name="replace_em_with_quote" required="true"/>
+    <p:option name="endnotes" required="true"/>
+
     <p:output port="fileset.out">
         <p:pipe step="fileset" port="result"/>
     </p:output>
@@ -55,9 +73,23 @@
                 </xsl:stylesheet>
             </p:inline>
         </p:input>
-        <p:input port="parameters">
-            <p:empty/>
-        </p:input>
+        <p:with-param name="fontsize" select="$fontsize"/>
+        <p:with-param name="font" select="$font"/>
+        <p:with-param name="backupFont" select="$backupFont"/>
+        <p:with-param name="backupUnicodeRanges" select="$backupUnicodeRanges"/>
+        <p:with-param name="defaultLanguage" select="$defaultLanguage"/>
+        <p:with-param name="stocksize" select="$stocksize"/>
+        <p:with-param name="alignment" select="$alignment"/>
+        <p:with-param name="pageStyle" select="$pageStyle"/>
+        <p:with-param name="line_spacing" select="$line_spacing"/>
+        <p:with-param name="paperwidth" select="$paperwidth"/>
+        <p:with-param name="paperheight" select="$paperheight"/>
+        <p:with-param name="left_margin" select="$left_margin"/>
+        <p:with-param name="right_margin" select="$right_margin"/>
+        <p:with-param name="top_margin" select="$top_margin"/>
+        <p:with-param name="bottom_margin" select="$bottom_margin"/>
+        <p:with-param name="replace_em_with_quote" select="$replace_em_with_quote"/>
+        <p:with-param name="endnotes" select="$endnotes"/>
     </p:xslt>
     
     <p:add-attribute match="/*" attribute-name="xml:base" name="latex">
