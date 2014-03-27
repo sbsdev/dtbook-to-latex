@@ -69,25 +69,25 @@
       </p:documentation>
     </p:option>
     
-    <p:option name="backupFont" required="false" px:type="string" select="'Arial Unicode MS'">
+    <p:option name="backup-font" required="false" px:type="string" select="'Arial Unicode MS'">
       <p:documentation>
-        <h2 px:role="name">backupFont</h2>
-        <p px:role="desc">Optional secondary font to be used for specific Unicode ranges specified in backupUnicodeRanges. The ucharclasses package (http://ctan.org/tex-archive/macros/xetex/latex/ucharclasses) must be installed for this feature.</p>
+        <h2 px:role="name">backup-font</h2>
+        <p px:role="desc">Optional secondary font to be used for specific Unicode ranges specified in backup-unicode-ranges. The ucharclasses package (http://ctan.org/tex-archive/macros/xetex/latex/ucharclasses) must be installed for this feature.</p>
         <pre><code class="example">Arial Unicode MS</code></pre>
       </p:documentation>
     </p:option>
     
-    <p:option name="backupUnicodeRanges" required="false" px:type="string" select="''">
+    <p:option name="backup-unicode-ranges" required="false" px:type="string" select="''">
       <p:documentation>
-        <h2 px:role="name">backupUnicodeRanges</h2>
+        <h2 px:role="name">backup-unicode-ranges</h2>
         <p px:role="desc">Comma-separated list of Unicode ranges (in camel case notation) for which the backup font must be applied.</p>
         <pre><code class="example">Arabic,Hebrew,Cyrillic,GreekAndCoptic</code></pre>
       </p:documentation>
     </p:option>
     
-    <p:option name="defaultLanguage" required="false" px:type="string" select="'english'">
+    <p:option name="default-language" required="false" px:type="string" select="'english'">
       <p:documentation>
-        <h2 px:role="name">defaultLanguage</h2>
+        <h2 px:role="name">default-language</h2>
         <p px:role="desc">Language for the babel package if no language is specified in a xml:lang tag. For all valid values check the babel documentation (http://www.ctan.org/get/macros/latex/required/babel/babel.pdf)</p>
         <pre><code class="example">english</code></pre>
       </p:documentation>
@@ -109,17 +109,17 @@
       </p:documentation>
     </p:option>
     
-    <p:option name="pageStyle" required="false" px:type="string" select="'plain'">
+    <p:option name="page-style" required="false" px:type="string" select="'plain'">
       <p:documentation>
-        <h2 px:role="name">pageStyle</h2>
+        <h2 px:role="name">page-style</h2>
         <p px:role="desc">Page style for the generated LaTeX. Possible values are 'plain', 'withPageNums' or 'scientific'. Default is 'plain'.</p>
         <pre><code class="example">plain</code></pre>
       </p:documentation>
     </p:option>
     
-    <p:option name="line_spacing" required="false" px:type="string" select="'singlespacing'">
+    <p:option name="line-spacing" required="false" px:type="string" select="'singlespacing'">
       <p:documentation>
-        <h2 px:role="name">line_spacing</h2>
+        <h2 px:role="name">line-spacing</h2>
         <p px:role="desc">Line spacing in the generated LaTeX. Possible values are 'singlespacing', 'onehalfspacing' or 'doublespacing'. Default is 'singlespacing'.</p>
         <pre><code class="example">singlespacing</code></pre>
       </p:documentation>
@@ -141,41 +141,41 @@
       </p:documentation>
     </p:option>
     
-    <p:option name="left_margin" required="false" px:type="string" select="'28mm'">
+    <p:option name="left-margin" required="false" px:type="string" select="'28mm'">
       <p:documentation>
-        <h2 px:role="name">left_margin</h2>
+        <h2 px:role="name">left-margin</h2>
         <p px:role="desc">Specific inner margin of the paper</p>
         <pre><code class="example">28mm</code></pre>
       </p:documentation>
     </p:option>
     
-    <p:option name="right_margin" required="false" px:type="string" select="'20mm'">
+    <p:option name="right-margin" required="false" px:type="string" select="'20mm'">
       <p:documentation>
-        <h2 px:role="name">right_margin</h2>
+        <h2 px:role="name">right-margin</h2>
         <p px:role="desc">Specific outer margin of the paper</p>
         <pre><code class="example">20mm</code></pre>
       </p:documentation>
     </p:option>
     
-    <p:option name="top_margin" required="false" px:type="string" select="'20mm'">
+    <p:option name="top-margin" required="false" px:type="string" select="'20mm'">
       <p:documentation>
-        <h2 px:role="name">top_margin</h2>
+        <h2 px:role="name">top-margin</h2>
         <p px:role="desc">Specific top margin of the page</p>
         <pre><code class="example">20mm</code></pre>
       </p:documentation>
     </p:option>
     
-    <p:option name="bottom_margin" required="false" px:type="string" select="'20mm'">
+    <p:option name="bottom-margin" required="false" px:type="string" select="'20mm'">
       <p:documentation>
-        <h2 px:role="name">bottom_margin</h2>
+        <h2 px:role="name">bottom-margin</h2>
         <p px:role="desc">Specific bottom margin of the page</p>
         <pre><code class="example">20mm</code></pre>
       </p:documentation>
     </p:option>
     
-    <p:option name="replace_em_with_quote" required="false" px:type="boolean" select="'false'">
+    <p:option name="replace-em-with-quote" required="false" px:type="boolean" select="'false'">
       <p:documentation>
-        <h2 px:role="name">replace_em_with_quote</h2>
+        <h2 px:role="name">replace-em-with-quote</h2>
         <p px:role="desc">Replace em with quoted text as emphasis might be hard to read</p>
         <pre><code class="example">false</code></pre>
       </p:documentation>
@@ -219,20 +219,20 @@
         </p:with-option>
         <p:with-option name="fontsize" select="$fontsize"/>
         <p:with-option name="font" select="$font"/>
-        <p:with-option name="backupFont" select="$backupFont"/>
-        <p:with-option name="backupUnicodeRanges" select="$backupUnicodeRanges"/>
-        <p:with-option name="defaultLanguage" select="$defaultLanguage"/>
+        <p:with-option name="backup-font" select="$backup-font"/>
+        <p:with-option name="backup-unicode-ranges" select="$backup-unicode-ranges"/>
+        <p:with-option name="default-language" select="$default-language"/>
         <p:with-option name="stocksize" select="$stocksize"/>
         <p:with-option name="alignment" select="$alignment"/>
-        <p:with-option name="pageStyle" select="$pageStyle"/>
-        <p:with-option name="line_spacing" select="$line_spacing"/>
+        <p:with-option name="page-style" select="$page-style"/>
+        <p:with-option name="line-spacing" select="$line-spacing"/>
         <p:with-option name="paperwidth" select="$paperwidth"/>
         <p:with-option name="paperheight" select="$paperheight"/>
-        <p:with-option name="left_margin" select="$left_margin"/>
-        <p:with-option name="right_margin" select="$right_margin"/>
-        <p:with-option name="top_margin" select="$top_margin"/>
-        <p:with-option name="bottom_margin" select="$bottom_margin"/>
-        <p:with-option name="replace_em_with_quote" select="$replace_em_with_quote"/>
+        <p:with-option name="left-margin" select="$left-margin"/>
+        <p:with-option name="right-margin" select="$right-margin"/>
+        <p:with-option name="top-margin" select="$top-margin"/>
+        <p:with-option name="bottom-margin" select="$bottom-margin"/>
+        <p:with-option name="replace-em-with-quote" select="$replace-em-with-quote"/>
         <p:with-option name="endnotes" select="$endnotes"/>
     </sbs:dtbook-to-latex.convert>
     
