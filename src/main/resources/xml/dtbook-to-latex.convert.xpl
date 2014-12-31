@@ -42,7 +42,7 @@
     <p:import href="http://www.daisy.org/pipeline/modules/fileset-utils/library.xpl"/>
     
     <pxi:normalize-uri>
-        <p:with-option name="href" select="$output-dir"/>
+        <p:with-option name="href" select="concat($output-dir,'/')"/>
     </pxi:normalize-uri>
     
     <px:fileset-create>
