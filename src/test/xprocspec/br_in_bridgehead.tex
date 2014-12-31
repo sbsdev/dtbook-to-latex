@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<c:data content-type="application/x-latex" xmlns:c="http://www.w3.org/ns/xproc-step">
+% ***********************
+% DMFC dtbook2latex v0.3
+% ***********************
+\documentclass[17pt,a4paper,extrafontsizes,twoside,showtrims,openright]{memoir}
+\usepackage{calc}
+\captionstyle{\raggedright}
+\settrimmedsize{250mm}{200mm}{*}
+\setlength{\trimtop}{\stockheight - \paperheight}
+\setlength{\trimedge}{\stockwidth - \paperwidth}
+\settrims{0.5\trimtop}{\trimedge}
+\setlrmarginsandblock{28mm}{20mm}{*}
+\setulmarginsandblock{20mm}{20mm + 1.5\onelineskip}{*}
+\setheadfoot{\onelineskip}{1.5\onelineskip}
+\setheaderspaces{*}{*}{0.4}
+\checkandfixthelayout
+
+\newcommand{\nocontentsline}[3]{}
+\newcommand*{\trimLmarksLight}{%
+  \let\tmarktl\Ltrimpictl
+  \let\tmarktr\Ltrimpictr
+  \let\tmarkbl\Ltrimpicbl
+  \let\tmarkbr\Ltrimpicbr
+  \let\tmarktm\relax
+  \let\tmarkml\relax
+  \let\tmarkmr\relax
+  \let\tmarkbm\relax}
+
+\trimLmarksLight
+
+\usepackage{graphicx}
+\usepackage{adjustbox}
+\usepackage[german]{babel}
+\def\languageshorthands#1{}
+\setlength{\parskip}{1.5ex}
+\setlength{\parindent}{0ex}
+\usepackage{fontspec,xunicode,xltxtra}
+\defaultfontfeatures{Mapping=tex-text}
+\setmainfont{Tiresias LPfont}
+\usepackage{hyperref}
+\hypersetup{pdftitle={TESTSERVER3\_1901}, pdfauthor={}}
+\usepackage{float}
+\usepackage{alphalph}
+
+\sloppy
+\setlength{\topskip}{1.6\topskip}
+\checkandfixthelayout
+\sloppybottom
+
+\clubpenalty=10000
+\widowpenalty=10000
+\raggedbottom
+\renewcommand*{\chaptitlefont}{\normalfont\LARGE\bfseries\raggedright}
+\setsecheadstyle{\Large\bfseries\raggedright}
+\setsubsecheadstyle{\large\bfseries\raggedright}
+\setsubsubsecheadstyle{\bfseries\raggedright}
+\newlength{\textheightMinusCaption}
+\setlength{\textheightMinusCaption}{\textheight - \baselineskip}
+\renewcommand{\cftchapterleader}{, }
+\renewcommand{\cftchapterafterpnum}{\cftparfillskip}
+\renewcommand{\cftsectionleader}{, }
+\renewcommand{\cftsectionafterpnum}{\cftparfillskip}
+\renewcommand{\cftsubsectionleader}{, }
+\renewcommand{\cftsubsectionafterpnum}{\cftparfillskip}
+\renewcommand{\cftsubsubsectionleader}{, }
+\renewcommand{\cftsubsubsectionafterpnum}{\cftparfillskip}
+\makeevenfoot{plain}{\thepage}{}{}
+\makeoddfoot{plain}{}{}{\thepage}
+\setrmarg{3.55em plus 1fil}
+\maxtocdepth{section}
+\renewcommand{\foottextfont}{\normalsize}
+\footmarkstyle{\textsuperscript{#1} }
+\setlength{\footmarkwidth}{0ex}
+\setlength{\footmarksep}{\footmarkwidth}
+\setlength{\footnotesep}{\onelineskip}
+\renewcommand{\footnoterule}{%
+\kern-3pt%
+\hrule height 1.5pt
+\kern 2.6pt}
+\renewcommand{\theenumii}{\AlphAlph{\value{enumii}}}
+\renewcommand{\labelenumii}{\theenumii}
+
+\OnehalfSpacing
+\setlength{\cftparskip}{0.25\onelineskip}
+\setlength{\vindent}{0em}
+\newenvironment{indentedlist}%
+  {\begin{list}{}{%
+    \setlength{\leftmargin}{1.5em}%
+    \setlength{\rightmargin}{0pt}%
+    \setlength{\labelwidth}{0pt}%
+    \setlength{\itemindent}{0pt}}}%
+  {\end{list}}
+\renewcommand*{\notesname}{Anmerkungen}
+\begin{document}
+\raggedright
+\frontmatter
+{\large Burkhard Wetekam}\\[1.5cm]
+\begin{Spacing}{1.75}
+{\huge Diebe im Dschungel}\\[0.5cm]
+\end{Spacing}
+\vfill
+Grossdruck in einem Band\\[0.5cm]
+SBS Schweizerische Bibliothek \\
+für Blinde, Seh- und Lesebehinderte\\[0.5cm]
+\clearpage
+Dieses Grossdruckbuch ist die ausschliesslich für die Nutzung durch seh- und lesebehinderte Menschen bestimmte zugängliche Version eines urheberrechtlich geschützten Werks. Sie können es im Rahmen des Urheberrechts persönlich nutzen, dürfen es aber nicht weiter verbreiten oder öffentlich zugänglich machen.
+
+\vfill
+Verlag, Satz und Druck:\\[0.5cm]
+SBS Schweizerische Bibliothek \\
+für Blinde, Seh- und Lesebehinderte, Zürich\\[0.5cm]
+www.sbs.ch\\[0.5cm]
+SBS 2014
+\cleartorecto
+{\normalsize Burkhard Wetekam}\\[1.5cm]
+\begin{Spacing}{1.75}
+{\Large Diebe im Dschungel}\\[0.5cm]
+\end{Spacing}
+Rätselkrimi
+
+Kurzstreckenleser
+
+\vfill
+Schroedel
+
+\clearpage
+\cleartorecto
+\tableofcontents*
+\mainmatter
+\pagestyle{Ruled}
+\aliaspagestyle{chapter}{plain}
+\chapter[Chapter]{Chapter}
+Text
+
+\section[Section]{Section}
+Text
+
+\subsection[Subsection]{Subsection}
+Text
+
+\chapter*{\ }
+\section*{Bridgehead}
+Text
+
+\section[Section]{Section}
+Text
+
+\subsection[Subsection]{Subsection}
+Text
+
+\setcounter{secnumdepth}{-1}
+\bgroup\let\addcontentsline=\nocontentsline
+\section[Bridgehead]{Bridge\\*
+head}
+\egroup
+\setcounter{secnumdepth}{1}
+Text
+
+\section[Section]{Section}
+Text
+
+\subsection[Subsection]{Subsection}
+Text
+
+\chapter[Chapter]{Chapter}
+Text
+
+\end{document}
+</c:data>

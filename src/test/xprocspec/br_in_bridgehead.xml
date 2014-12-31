@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE dtbook [
+<!ENTITY ndash "&#x2013;">
+<!ENTITY nbsp "&#x00A0;">
+<!ENTITY test "<brl:select><brl:when-braille>braille</brl:when-braille><brl:otherwise>other</brl:otherwise></brl:select>">
+]>
+<?oxygen RNGSchema="http://xmlp-test/schema/dtbook-2005-3-sbs.rng" type="xml"?><dtbook xmlns:brl="http://www.daisy.org/z3986/2009/braille/" xmlns="http://www.daisy.org/z3986/2005/dtbook/" version="2005-3-sbs-full" xml:lang="de-1901">
+  <head>
+    <meta name="dc:Title" content="TESTSERVER3_1901"/>
+    <meta name="dc:Creator" content=""/>
+    <meta name="dc:Subject" content=""/>
+    <meta name="dc:Description" content=""/>
+    <meta name="dc:Publisher" content="SBS Schweizerische Bibliothek für Blinde, Seh- und Lesebehinderte"/>
+    <meta name="dc:Date" content="2014-01-10"/>
+    <meta name="dc:Type" content="Text"/>
+    <meta name="dc:Format" content="ANSI/NISO Z39.86-2005"/>
+    <meta name="dc:Identifier" content="ch-sbs-a2e12e34-cf2c-495a-b1d8-81e0e03d930a"/>
+    <meta name="dc:Source" content=""/>
+    <meta name="dc:Language" content="de-1901"/>
+    <meta name="dc:Rights" content=""/>
+    <meta name="dtb:uid" content="ch-sbs-a2e12e34-cf2c-495a-b1d8-81e0e03d930a"/>
+    <meta name="dtb:sourceEdition" content=""/>
+    <meta name="dtb:sourcePublisher" content=""/>
+    <meta name="dtb:sourceRights" content=""/>
+    <meta name="prod:series" content=""/>
+    <meta name="prod:seriesNumber" content=""/>
+    <meta name="prod:source" content=""/>
+  </head>
+  <book>
+    <frontmatter>
+      <doctitle>Diebe im Dschungel</doctitle>
+      <docauthor>Burkhard Wetekam</docauthor>
+      <level1 class="titlepage">
+        <level2>
+          <p>Rätselkrimi</p>
+          <p>Kurzstreckenleser</p>
+          <p class="sourcePublisher">Schroedel</p>
+        </level2>
+      </level1>
+      <level1 class="toc">
+        <list>
+          <li>
+            <lic></lic>
+            <list>
+              <li><lic></lic></li>
+            </list>
+          </li>
+        </list>
+      </level1>
+    </frontmatter>
+    <bodymatter>
+      <level1>
+        <h1>Chapter</h1>
+        <p>Text</p>
+        <level2>
+          <h2>Section</h2>
+          <p>Text</p>
+          <level3>
+            <h3>Subsection</h3>
+            <p>Text</p>
+          </level3>
+        </level2>
+      </level1>
+      <level1>
+        <bridgehead>Bridgehead</bridgehead>
+        <p>Text</p>
+        <level2>
+          <h2>Section</h2>
+          <p>Text</p>
+          <level3>
+            <h3>Subsection</h3>
+            <p>Text</p>
+          </level3>
+        </level2>
+        <bridgehead>Bridge<br/>head</bridgehead>
+        <p>Text</p>
+        <level2>
+          <h2>Section</h2>
+          <p>Text</p>
+          <level3>
+            <h3>Subsection</h3>
+            <p>Text</p>
+          </level3>
+        </level2>
+      </level1>
+      <level1>
+        <h1>Chapter</h1>
+        <p>Text</p>
+      </level1>
+    </bodymatter>
+  </book>
+</dtbook>

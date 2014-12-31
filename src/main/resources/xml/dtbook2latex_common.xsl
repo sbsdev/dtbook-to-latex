@@ -232,6 +232,13 @@
 	<xsl:text>\setheadfoot{\onelineskip}{1.5\onelineskip}&#10;</xsl:text>
 	<xsl:text>\setheaderspaces{*}{*}{0.4}&#10;</xsl:text>
 	<xsl:text>\checkandfixthelayout&#10;&#10;</xsl:text>
+	
+	<!--
+		Explanation: see dtb:bridgehead matcher
+	-->
+	<xsl:if test="//dtb:bridgehead//dtb:br">
+	  <xsl:text>\newcommand{\nocontentsline}[3]{}&#10;</xsl:text>
+	</xsl:if>
 
 	<!-- The trim marks should be outside the actual page so that you will not
 	     see any lines even if you do not cut the paper absolutely precisely
@@ -764,10 +771,35 @@
      <!-- FIXME: This will fail if we are inside a level6. I guess we should define a LaTeX
           command \subsubparagraph*, give it some styling and add it to level_to_section_map
           -->
-     <xsl:value-of select="$level_to_section_map/entry[@key=$level]"/>
-     <xsl:text>*{</xsl:text>
-     <xsl:apply-templates/>
-     <xsl:text>}&#10;</xsl:text>   
+     <xsl:choose>
+       <xsl:when test="not(.//dtb:br)">
+         <xsl:value-of select="$level_to_section_map/entry[@key=$level]"/>
+         <xsl:text>*{</xsl:text>
+         <xsl:apply-templates/>
+         <xsl:text>}&#10;</xsl:text>
+       </xsl:when>
+       <xsl:otherwise>
+         <!--
+             Because chapter*, section*, etc. don't have a "short-title" argument we must use an
+             alternative method to disable numbering and skip the toc entry.
+         -->
+         <!-- don't number -->
+         <xsl:text>\setcounter{secnumdepth}{-1}&#10;</xsl:text>
+         <!-- don't add to toc -->
+         <xsl:text>\bgroup\let\addcontentsline=\nocontentsline&#10;</xsl:text>
+         <xsl:value-of select="$level_to_section_map/entry[@key=$level]"/>
+         <xsl:text>[</xsl:text>
+         <xsl:value-of select="normalize-space(my:quoteSpecialChars(string()))"/>
+         <xsl:text>]{</xsl:text>
+         <xsl:apply-templates/>
+         <xsl:text>}&#10;</xsl:text>
+         <xsl:text>\egroup&#10;</xsl:text>
+         <!-- reset numbering depth to 1 (section) or 0 (book) -->
+         <xsl:text>\setcounter{secnumdepth}{</xsl:text>
+         <xsl:value-of select="if ($pageStyle='plain') then '0' else '1'"/>
+         <xsl:text>}&#10;</xsl:text>
+       </xsl:otherwise>
+     </xsl:choose>
    </xsl:template>
 
    <xsl:template match="dtb:list[not(@type)]">
