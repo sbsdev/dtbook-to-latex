@@ -233,6 +233,27 @@
 	<xsl:text>\setheaderspaces{*}{*}{0.4}&#10;</xsl:text>
 	<xsl:text>\checkandfixthelayout&#10;&#10;</xsl:text>
 
+	<xsl:if test="//dtb:list/dtb:hd">
+	  <!--
+		  macro for moving to left baseline
+		  (see http://tex.stackexchange.com/questions/33487/skip-to-absolute-position-on-line/33494#33494)
+		  FIXME: for list type='pl': a bit indented
+		  FIXME: for list type='ul': more indented
+	  -->
+	  <xsl:text>\usepackage[savepos]{zref}&#10;</xsl:text>
+	  <xsl:text>\newcounter{savepos}&#10;</xsl:text>
+	  <xsl:text>\AtBeginDocument{\zsavepos{baseline}}&#10;</xsl:text>
+	  <xsl:text>\newcommand{\frombaseline}[1]{%&#10;</xsl:text>
+	  <xsl:text>  \hspace{1pt}%&#10;</xsl:text>
+	  <xsl:text>  \stepcounter{savepos}%&#10;</xsl:text>
+	  <xsl:text>  \zsavepos{currentloc\thesavepos}%&#10;</xsl:text>
+	  <xsl:text>  \hspace{-\zposx{currentloc\thesavepos}sp}%&#10;</xsl:text>
+	  <xsl:text>  \hspace{\zposx{baseline}sp}%&#10;</xsl:text>
+	  <xsl:text>  \hspace{-1pt}%&#10;</xsl:text>
+	  <xsl:text>  \hspace{#1}%&#10;</xsl:text>
+	  <xsl:text>}&#10;&#10;</xsl:text>
+	</xsl:if>
+
 	<!-- The trim marks should be outside the actual page so that you will not
 	     see any lines even if you do not cut the paper absolutely precisely
 	     (see section 18.3. Trim marks in the memoir manual) -->
@@ -990,8 +1011,20 @@
      <xsl:text>}&#10;</xsl:text>
    </xsl:template>
 
+   <!--
+	   FIXME: hardcoding not ok!
+	   - what about nested lists?
+	   - what about different fonts?
+	   TODO: suppress page break after
+	   - issue http://redmine/issues/2366
+	   - see http://stackoverflow.com/questions/2210638/latex-suppress-page-break
+   -->
    <xsl:template match="dtb:list/dtb:hd">
-	<xsl:text>\item \textbf{</xsl:text>
+	<xsl:text>\item [] \frombaseline{</xsl:text>
+	<xsl:value-of select="if (parent::dtb:list[@type='pl']) then '2.5mm' else
+	                      if (parent::dtb:list[@type='ul']) then '8mm' else
+	                      if (parent::dtb:list[@type='ol']) then '0mm' else '0mm'"/>
+	<xsl:text>}\textbf{</xsl:text>
 	<xsl:apply-templates/>
 	<xsl:text>}&#10;</xsl:text>
    </xsl:template>

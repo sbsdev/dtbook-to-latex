@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dtbook xmlns="http://www.daisy.org/z3986/2005/dtbook/" version="2005-3" xml:lang="de">
+	<book>
+		<bodymatter>
+			<level1>
+				<list type="ul">
+					<hd>Titel 1</hd>
+					<li>Eintrag 1</li>
+					<li>Eintrag 2</li>
+					<hd>Titel 2</hd>
+					<li>Eintrag 3</li>
+					<li>
+						<list type="ul">
+							<hd>Titel 3.1</hd>
+							<li>Eintrag 3.1</li>
+							<li>Eintrag 3.2</li>
+							<hd>Titel 3.2</hd>
+							<li>Eintrag 3.3</li>
+						</list>
+					</li>
+				</list>
+				<list type="ol">
+					<hd>Titel 1</hd>
+					<li>Eintrag 1</li>
+					<li>Eintrag 2</li>
+					<hd>Titel 2</hd>
+					<li>Eintrag 3</li>
+					<li>
+						<list type="ol">
+							<hd>Titel 3.1</hd>
+							<li>Eintrag 3.1</li>
+							<li>Eintrag 3.2</li>
+							<hd>Titel 3.2</hd>
+							<li>Eintrag 3.3</li>
+						</list>
+					</li>
+				</list>
+				<list type="pl">
+					<hd>Titel 1</hd>
+					<li>Eintrag 1</li>
+					<li>Eintrag 2</li>
+					<hd>Titel 2</hd>
+					<li>Eintrag 3</li>
+					<li>
+						<list type="pl">
+							<hd>Titel 3.1</hd>
+							<li>Eintrag 3.1</li>
+							<li>
+								<list type="pl">
+									<hd>Titel 3.1.1</hd>
+									<li>Eintrag 3.1.1</li>
+								</list>
+							</li>
+						</list>
+					</li>
+				</list>
+			</level1>
+		</bodymatter>
+	</book>
+</dtbook>
